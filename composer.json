@@ -1,0 +1,13 @@
+{
+    "name": "assurea/api-connector",
+    "type": "library",
+    "require": {
+        "php": ">=5.3.0",
+        "ext-curl": "*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Assurea": "src/"
+        }
+    }
+}

@@ -18,6 +18,9 @@ class Connector {
 
     public $sslRelaxed = false;
 
+    protected $lastError = null;
+    protected $lastRawResult = null;
+
     /**
      *
      * @param string $login
@@ -33,8 +36,22 @@ class Connector {
     }
 
     /**
+     * @return string
+     */
+    public function getLastError() {
+        return $this->lastError;
+    }
+
+    /**
+     * @return string
+     */
+    public function getLastRawResult() {
+        return $this->lastRawResult;
+    }
+
+    /**
      *
-     * @return type
+     * @return \stdClass|false
      */
     public function auth()
     {
@@ -52,10 +69,24 @@ class Connector {
             curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         }
         curl_setopt($ch, CURLOPT_TIMEOUT, 20);
-        $res = curl_exec($ch);
-        $this->res = $res;
+
+        $this->lastRawResult = curl_exec($ch);
+        $erreur = curl_error($ch);
+
         curl_close($ch);
-        return $this->res;
+
+        if(!empty($erreur)) {
+            $this->lastError = "Erreur cURL : ".$erreur;
+            return false;
+        }
+
+        $resultatOut = json_decode($this->lastRawResult, false);
+        if(json_last_error() !== JSON_ERROR_NONE) {
+            $this->lastError = "Le retour de l'API n'est pas une chaine JSON valide : ".json_last_error();
+            return false;
+        }
+
+        return $resultatOut;
     }
 
     /**
@@ -79,7 +110,7 @@ class Connector {
      * @param array $postvars
      * @param string $type
      * @param string $authToken
-     * @return bool|string
+     * @return false|\stdClass
      */
     public function curl($method, $postvars, $type, $authToken)
     {
@@ -107,16 +138,31 @@ class Connector {
         }
         curl_setopt($ch, CURLOPT_TIMEOUT, 20);
         $res = curl_exec($ch);
-        $this->res = $res;
+
+        $this->lastRawResult = curl_exec($ch);
+        $erreur = curl_error($ch);
+
         curl_close($ch);
-        return $this->res;
+
+        if(!empty($erreur)) {
+            $this->lastError = "Erreur cURL : ".$erreur;
+            return false;
+        }
+
+        $resultatOut = json_decode($this->lastRawResult, false);
+        if(json_last_error() !== JSON_ERROR_NONE) {
+            $this->lastError = "Le retour de l'API n'est pas une chaine JSON valide : ".json_last_error();
+            return false;
+        }
+
+        return $resultatOut;
     }
 
     /**
      * @param string $authToken
      * @param string $method
      * @param array $data
-     * @return bool|string
+     * @return false|\stdClass
      */
     public function callApi($authToken, $method, $data = null)
     {
@@ -124,8 +170,7 @@ class Connector {
         if ($data !== null) {
             $postvars = ["data" => json_encode($data)];
         }
-        $out = $this->curl($method, $postvars, 'post', $authToken);
-        return $out;
+        return $this->curl($method, $postvars, 'post', $authToken);
     }
 
 }

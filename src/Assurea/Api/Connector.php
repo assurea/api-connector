@@ -14,7 +14,7 @@ class Connector {
     public $login;
     public $url;
     public $method;
-    public $res;
+    public $curlTimeout = 20;
 
     public $sslRelaxed = false;
 
@@ -68,7 +68,7 @@ class Connector {
             curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
             curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         }
-        curl_setopt($ch, CURLOPT_TIMEOUT, 20);
+        curl_setopt($ch, CURLOPT_TIMEOUT, $this->curlTimeout);
 
         $this->lastRawResult = curl_exec($ch);
         $erreur = curl_error($ch);
@@ -136,7 +136,7 @@ class Connector {
             curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
             curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         }
-        curl_setopt($ch, CURLOPT_TIMEOUT, 20);
+        curl_setopt($ch, CURLOPT_TIMEOUT, $this->curlTimeout);
 
         $this->lastRawResult = curl_exec($ch);
         $erreur = curl_error($ch);

@@ -137,7 +137,6 @@ class Connector {
             curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         }
         curl_setopt($ch, CURLOPT_TIMEOUT, 20);
-        $res = curl_exec($ch);
 
         $this->lastRawResult = curl_exec($ch);
         $erreur = curl_error($ch);

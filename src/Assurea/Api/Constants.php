@@ -84,17 +84,17 @@ class Constants
      */
     public static function garanties() {
         return array(
-            self::GARANTIE_DC_PTIA => 'Décès/PTIA',
-            self::GARANTIE_DC_PTIA_ITT_IPT => 'Décès/PTIA/ITT/IPT',
-            self::GARANTIE_DC_PTIA_ITT_IPT_ITP_IPP => 'Décès/PTIA/ITT/IPT/ITP/IPP',
-            self::GARANTIE_DC_PTIA_ITT_IPT_RACHAT_MNO => 'Décès/PTIA/ITT/IPT avec rachat des exclusions dos/psy',
-            self::GARANTIE_DC_PTIA_ITT_IPT_ITP_IPP_RACHAT_MNO => 'Décès/PTIA/ITT/IPT/ITP/IPP avec rachat des exclusions dos/psy',
-            self::GARANTIE_DC_PTIA_ITT_IPT_PE => 'Décès/PTIA/ITT/IPT/PE',
-            self::GARANTIE_DC_PTIA_ITT_IPT_ITP_IPP_PE => 'Décès/PTIA/ITT/IPT/ITP/IPP/PE',
-            //self::GARANTIE_DC_PTIA_IPPRO => 'Décès/PTIA/IPPRO', // spécifique SWISSLIFE
-            self::GARANTIE_DC_PTIA_IPT => 'Décès/PTIA/IPT',
-            self::GARANTIE_DC_PTIA_IPT_IPP => 'Décès/PTIA/IPT/IPP',
-            self::GARANTIE_DC_PTIA_IPT_IPP_RACHAT_MNO => 'Décès/PTIA/IPT/IPP avec rachat des exclusions dos/psy',
+            self::GARANTIE_DC_PTIA => 'Décès / PTIA',
+            self::GARANTIE_DC_PTIA_IPT => 'Décès / PTIA / IPT',
+            self::GARANTIE_DC_PTIA_IPT_IPP => 'Décès / PTIA / IPT / IPP',
+            self::GARANTIE_DC_PTIA_ITT_IPT => 'Décès / PTIA / ITT / IPT',
+            self::GARANTIE_DC_PTIA_ITT_IPT_ITP_IPP => 'Décès / PTIA / ITT / IPT / ITP / IPP',
+            self::GARANTIE_DC_PTIA_ITT_IPT_RACHAT_MNO => 'Décès / PTIA / ITT / IPT avec rachat des exclusions dos/psy',
+            self::GARANTIE_DC_PTIA_ITT_IPT_ITP_IPP_RACHAT_MNO => 'Décès / PTIA / ITT / IPT / ITP / IPP avec rachat des exclusions dos/psy',
+            self::GARANTIE_DC_PTIA_ITT_IPT_PE => 'Décès / PTIA / ITT / IPT / PE',
+            self::GARANTIE_DC_PTIA_ITT_IPT_ITP_IPP_PE => 'Décès / PTIA / ITT / IPT / ITP / IPP / PE',
+            self::GARANTIE_DC_PTIA_IPPRO => 'Décès / PTIA / IPPRO (spécifique au tarif SWISSLIFE)',
+            self::GARANTIE_DC_PTIA_IPT_IPP_RACHAT_MNO => 'Décès / PTIA / IPT / IPP avec rachat des exclusions dos/psy',
         );
     }
 
@@ -122,8 +122,8 @@ class Constants
      */
     public static function fumeur() {
         return array(
-            self::FUMEUR_NON => 'Non',
-            self::FUMEUR_OUI => 'Oui',
+            self::FUMEUR_NON => 'Non fumeur',
+            self::FUMEUR_OUI => 'Fumeur',
         );
     }
 

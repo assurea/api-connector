@@ -6,6 +6,15 @@ namespace Assurea\Api;
 
 class Constants
 {
+	
+	
+	/**
+		* garanties cadre financement
+		*/
+	const	CADRE_FI_NOUVEAU_PRET	=	0;
+	const	CADRE_FI_HAMON	=	1;
+	const	CADRE_FI_BOURQUIN	=	2;
+				
     /**
      * garanties applicables
      */
@@ -175,6 +184,17 @@ class Constants
             self::TYPE_PRET_AMORTISSABLE_PRO => 'Amortissable professionnel',
         );
     }
+
+	/**
+		* @return array
+		*/
+	public	static	function	cadre_fi()	{
+			return	array(
+					self::CADRE_FI_NOUVEAU_PRET	=>	'Nouveau Prêt',
+					self::CADRE_FI_HAMON	=>	'Loi Hamon',
+					self::CADRE_FI_BOURQUIN	=>	'Loi Bourquin',
+			);
+	}
 
 
 }

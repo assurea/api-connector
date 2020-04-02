@@ -121,7 +121,7 @@ class Constants
             self::CSP_VETERINAIRE => 'Vétérinaire',
             self::CSP_ARTISAN => 'Artisant',
             self::CSP_COMMERCANT => 'Commerçant',
-            self::CSP_RETRAITE_PRE_RETRAITE => 'Retrété, pré-retraité',
+            self::CSP_RETRAITE_PRE_RETRAITE => 'Retraité, pré-retraité',
             self::CSP_SANS_ACTIVITE => 'Sans activité professionelle',
         );
     }

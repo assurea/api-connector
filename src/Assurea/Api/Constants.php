@@ -119,7 +119,7 @@ class Constants
             self::CSP_CHIRURGIEN_DENTISTE => 'Chirurgien-dentiste',
             self::CSP_MEDECIN_SPECIALISTE => 'Médecin spécialiste',
             self::CSP_VETERINAIRE => 'Vétérinaire',
-            self::CSP_ARTISAN => 'Artisant',
+            self::CSP_ARTISAN => 'Artisan',
             self::CSP_COMMERCANT => 'Commerçant',
             self::CSP_RETRAITE_PRE_RETRAITE => 'Retraité, pré-retraité',
             self::CSP_SANS_ACTIVITE => 'Sans activité professionelle',

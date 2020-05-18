@@ -88,6 +88,17 @@ class Constants
     const CIVILITE_HOMME = 'H';
     const CIVILITE_FEMME = 'F';
 
+	/**
+	 * objet du financement
+	 */
+	const OBJ_RESIDENCE_PRINCIPALE = 1;
+	const OBJ_RESIDENCE_SECONDAIRE = 2;
+	const OBJ_PRET_TRAVAUX = 3;
+	const OBJ_INVEST_LOCATIF = 4;
+	const OBJ_PRET_PRO = 5;
+	const OBJ_OBJET_DIVERS = 6;
+	const OBJ_PRET_CONSTRUCTION = 7;
+
     /**
      * @return array
      */
@@ -194,6 +205,21 @@ class Constants
 					self::CADRE_FI_HAMON	=>	'Loi Hamon',
 					self::CADRE_FI_BOURQUIN	=>	'Loi Bourquin',
 			);
+	}
+
+	/**
+	 * @return array
+	 */
+	public	static	function	objet_financement()	{
+		return	array(
+			self::OBJ_RESIDENCE_PRINCIPALE => 'Acquisition Résidence Principale',
+			self::OBJ_RESIDENCE_SECONDAIRE => 'Acquisition Résidence Secondaire',
+			self::OBJ_PRET_TRAVAUX => 'Prêt travaux',
+			self::OBJ_INVEST_LOCATIF => 'Investissement Locatif',
+			self::OBJ_PRET_PRO => 'Prêt Professionnel',
+			self::OBJ_OBJET_DIVERS => 'Crédit à objet divers',
+			self::OBJ_PRET_CONSTRUCTION => 'Prêt construction',
+		);
 	}
 
 

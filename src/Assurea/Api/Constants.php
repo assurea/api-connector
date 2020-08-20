@@ -55,6 +55,18 @@ class Constants
 	const FUMEUR_OUI = 'O';
     const FUMEUR_NON = 'N';
 
+	/**
+	 * politique exposé oui/non
+	 */
+	const POLITIQUE_EXPOSE_OUI = 'O';
+	const POLITIQUE_EXPOSE_NON = 'N';
+
+	/**
+	 * proche politique exposé oui/non
+	 */
+	const PROCHE_POLITIQUE_EXPOSE_OUI = 'O';
+	const PROCHE_POLITIQUE_EXPOSE_NON = 'N';
+
     /**
      * déplacements professionels
      */
@@ -146,6 +158,26 @@ class Constants
             self::FUMEUR_OUI => 'Fumeur',
         );
     }
+
+	/**
+	 * @return array
+	 */
+	public static function politique_expose() {
+		return array(
+			self::POLITIQUE_EXPOSE_NON => 'Non',
+			self::POLITIQUE_EXPOSE_OUI => 'Oui',
+		);
+	}
+
+	/**
+	 * @return array
+	 */
+	public static function proche_politique_expose() {
+		return array(
+			self::PROCHE_POLITIQUE_EXPOSE_NON => 'Non',
+			self::PROCHE_POLITIQUE_EXPOSE_OUI => 'Oui',
+		);
+	}
 
     /**
      * @return array
